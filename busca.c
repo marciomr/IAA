@@ -9,7 +9,7 @@ int busca_sequencial(int* array, int n, int size) {
   for(i = 0; i < size; i++)
     if(array[i] == n) return i;
 
-  return -1;
+  return -1; // n não foi encontrado
 }
 
 // devolve a posição de n no arranjo ou -1 se não encontrar
@@ -75,8 +75,6 @@ int main(int argc, char const *argv[]) {
   for(i = 0; i < size; i++)
     scanf("%i", &array[i]);
 
-  srand(time(NULL));
-
   start = clock();
   for(int i = 0; i < n; i++) {
     if((*busca[tipo])(array, -1, size) != -1)
@@ -87,8 +85,5 @@ int main(int argc, char const *argv[]) {
   elapsed = ((double)(end - start)) / CLOCKS_PER_SEC;
 
   printf("Encontrados %i de %i elementos em %.2lf segundos.\n", nfound, n, elapsed);
-  
-  
-  
   return 0;
 }

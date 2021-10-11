@@ -1,11 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
-#define FALSE 0
-#define TRUE 1
-
-typedef short Bool;
+#include "utils.h"
 
 void print_help() {
   puts("-s ordenado");
@@ -43,7 +39,8 @@ int main(int argc, char const *argv[]) {
     }
   }
 
-  size = atoi(argv[1]) * 1000000;
+  size = atoi(argv[1]) * 10000;
+
   array = (int*) malloc(sizeof(int)*size);
 
   srand(time(NULL));
